@@ -1,0 +1,31 @@
+- name: Test Grafana Organization Library
+  hosts: localhost
+  tasks:
+    - name: create grafana organization
+      grafana_org:
+        grafana_url: "http://localhost:3000"
+        grafana_username: "admin"
+        grafana_password: "admin"
+        org_name: "hello"
+        state: present
+    - name: delete grafana organization
+      grafana_org:
+        grafana_url: "http://localhost:3000"
+        org_name: "opa"
+        grafana_username: "admin"
+        grafana_password: "admin"
+        state: absent
+    - name: create grafana organization
+      grafana_org:
+        grafana_url: "http://localhost:3000"
+        org_name: "MaoeSilvio5"
+        grafana_username: "admin"
+        grafana_password: "admin"
+        state: present
+    - name: delete grafana organization
+      grafana_org:
+        grafana_url: "http://localhost:3000"
+        org_name: "ASidhasdajopajsopdap"
+        grafana_username: "admin"
+        grafana_password: "admin"
+        state: absent
